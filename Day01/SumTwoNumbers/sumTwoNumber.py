@@ -33,13 +33,8 @@ def calculateSum(firstNumber, secondNumber):
     return result
 
 def makeNumberLengthEqual(difference, number):
-    newNumber = number
-    
-    for x in range(difference):
-        newNumber = "0" + newNumber
+    return "0"*difference + number
         
-    return newNumber
-
 def checkSumAtIndex(index, sumAtIndex):
     global carry
 
@@ -54,7 +49,7 @@ def main():
     num1 = input("Enter Num1: ")
     num2 = input("Enter Num2: ")
     result = calculateSum(num1, num2)
-    print(result)
+    print("Result: " + result)
     
 main()
     
