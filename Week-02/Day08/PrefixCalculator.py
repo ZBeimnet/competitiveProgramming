@@ -24,6 +24,7 @@ def prefix_calculator(string_input):
 
 
 print(prefix_calculator("+ 4 * 3 12"))
+print(prefix_calculator("+ * 4 3 12"))
 print(prefix_calculator("- + * 4 5 3 10"))
 
 
