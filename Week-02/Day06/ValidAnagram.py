@@ -15,7 +15,7 @@ def is_anagram(string1, string2):
     return result
 
 
-print(is_anagram("anagram", "nagarat"))
+print(is_anagram("anagram", "nagaram"))
 
 
 
