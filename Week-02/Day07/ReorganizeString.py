@@ -29,4 +29,4 @@ def reorganize_string(string):
     return organized_string
 
 
-print(reorganize_string("aabc"))
+print(reorganize_string("aaabc"))

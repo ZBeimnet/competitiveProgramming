@@ -11,4 +11,4 @@ def h_index(citations):
     return h
 
 
-print(h_index([3, 0, 6, 1, 5]))
+print(h_index([3, 0, 6, 1, 5, 7, 5]))
