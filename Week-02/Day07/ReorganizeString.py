@@ -7,11 +7,14 @@ def reorganize_string(string):
     for i in range(string_length):
         letter_count[ord(string[i])] += 1
 
+    # ascii code for lower-case a & z
+    a, z = 97, 122
+
     previous_letter = ""
     counter = string_length
     while counter > 0:
         max_index = 0
-        for i in range(97, 123):
+        for i in range(a, z+1):
             if letter_count[i] > letter_count[max_index] \
                     and chr(i) != previous_letter:
                 max_index = i
@@ -26,4 +29,4 @@ def reorganize_string(string):
     return organized_string
 
 
-print(reorganize_string("aabcccc"))
+print(reorganize_string("aabc"))
