@@ -1,4 +1,5 @@
 import sys
+
 sys.path.insert(1, "D:\CompetitiveProg\Week-01\Day01\SumTwoNumbers")
 sys.path.insert(1, "D:\CompetitiveProg\Week-01\Day02")
 import DivideTwoNumbers
@@ -21,4 +22,3 @@ def calculator():
 
 
 calculator()
-
