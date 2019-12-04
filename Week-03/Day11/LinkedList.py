@@ -46,6 +46,57 @@ class LinkedList:
         else:
             print("Node not found")
 
+    # def deleteAtIndex(self, index: int) -> None:
+    #     """
+    #     Delete the index-th node in the linked list, if the index is valid.
+    #     """
+    #     current_node = self.head
+    #     prev_node = self.head
+    #     counter = 0
+    #
+    #     # if node to be deleted is the first one
+    #     if index == 0 and self.head:
+    #         self.head = current_node.next
+    #         current_node = None
+    #
+    #     while current_node.next:
+    #         if counter == index:
+    #             break
+    #         else:
+    #             prev_node = current_node
+    #             current_node = current_node.next
+    #             counter += 1
+    #     counter += 1
+    #
+    #     prev_node.next = current_node.next
+    #     current_node = None
+
+    def insert_at_index(self, index, data):
+        if index == 0:
+            self.insert_first(data)
+            return
+
+        new_node = Node(data)
+        current_node = self.head
+        is_found = False
+        counter = 0
+        while current_node:
+            if counter == index - 1:
+                is_found = True
+                break
+            else:
+                current_node = current_node.next
+                counter += 1
+
+        if is_found and current_node.next:
+            new_node.next = current_node.next
+            current_node.next = new_node
+        elif is_found and not current_node.next:
+            self.insert_last(data)
+        else:
+            return
+
+
     def delete_node(self, delete_key):
         current_node = self.head
         previous_node = self.head
