@@ -1,39 +1,22 @@
 def beautify_string(s):
     string_length = len(s)
     question_mark = '?'
-
-    prev_char = s[0]
-    # check if it can be replaced
-    for i in range(1, string_length):
-        if prev_char != question_mark and s[i] != question_mark:
-            if prev_char == s[i]:
-                return -1
-        else:
-            prev_char = s[i]
-
-    # find number of question_marks
-    counter = 0
+    prev_char = ""
     for i in range(string_length):
         if s[i] == question_mark:
-            counter += 1
-
-    while counter > 0:
-        replace_char = ""
-        index = 0
-        for i in range(string_length):
-            if s[i] == question_mark:
-                if i == 0:
-                    replace_char = replace_questions_mark(None, s[i+1])
-                    index = i
-                elif i == string_length - 1:
-                    replace_char = replace_questions_mark(s[i-1], None)
-                    index = i
-                else:
-                    replace_char = replace_questions_mark(s[i-1], s[i+1])
-                    index = i
-                break
-        s = s[:index] + replace_char + s[index+1:]
-        counter -= 1
+            prev_char = ""
+            if i == 0:
+                replace_char = replace_questions_mark(None, s[i+1])
+            elif i == string_length - 1:
+                replace_char = replace_questions_mark(s[i-1], None)
+            else:
+                replace_char = replace_questions_mark(s[i-1], s[i+1])
+            s = s[:i] + replace_char + s[i + 1:]
+        else:
+            if prev_char == s[i]:
+                return -1
+            else:
+                prev_char = s[i]
 
     return s
 
