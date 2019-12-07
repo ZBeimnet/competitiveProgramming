@@ -1,5 +1,3 @@
-import sys
-sys.path.insert(1, "D:\CompetitiveProg\Week-02\Day08")
 from Stack import Stack
 
 

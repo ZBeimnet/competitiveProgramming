@@ -5,13 +5,15 @@ def beautify_string(s):
     for i in range(string_length):
         if s[i] == question_mark:
             prev_char = ""
-            if i == 0:
+            if string_length == 1:
+                return "a"
+            elif i == 0:
                 replace_char = replace_questions_mark(None, s[i+1])
             elif i == string_length - 1:
                 replace_char = replace_questions_mark(s[i-1], None)
             else:
                 replace_char = replace_questions_mark(s[i-1], s[i+1])
-            s = s[:i] + replace_char + s[i + 1:]
+            s = s[:i] + replace_char + s[i+1:]
         else:
             if prev_char == s[i]:
                 return -1
