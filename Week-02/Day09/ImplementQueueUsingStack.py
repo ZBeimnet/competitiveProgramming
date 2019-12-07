@@ -21,13 +21,13 @@ class MyQueue:
         """
         Initialize your data structure here.
         """
-        self.stack = Stack()
+        self.queue = Stack()
 
     def push(self, x: int) -> None:
         """
         Push element x to the back of queue.
         """
-        self.stack.push(x)
+        self.queue.push(x)
 
     def pop(self) -> int:
         """
@@ -35,15 +35,15 @@ class MyQueue:
         """
         # copy the stack to another, to get the first element
         new_stack = Stack()
-        for i in range(self.stack.size()):
-            new_stack.push(self.stack.pop())
+        for i in range(self.queue.size()):
+            new_stack.push(self.queue.pop())
 
         # now remove the the element at the top of the new stack
         popped_el = new_stack.pop()
 
         # now copy back the elements to get the correct order
         for i in range(new_stack.size()):
-            self.stack.push(new_stack.pop())
+            self.queue.push(new_stack.pop())
 
         return popped_el
 
@@ -53,8 +53,8 @@ class MyQueue:
         """
         # copy the stack to another, to get the first element
         new_stack = Stack()
-        for i in range(self.stack.size()):
-            new_stack.push(self.stack.pop())
+        for i in range(self.queue.size()):
+            new_stack.push(self.queue.pop())
 
         # now remove the the element at the top of the new stack
         popped_el = new_stack.pop()
@@ -63,7 +63,7 @@ class MyQueue:
 
         # now copy back the elements to get the correct order
         for i in range(new_stack.size()):
-            self.stack.push(new_stack.pop())
+            self.queue.push(new_stack.pop())
 
         return popped_el
 
@@ -71,7 +71,7 @@ class MyQueue:
         """
         Returns whether the queue is empty.
         """
-        return self.stack.size() == 0
+        return self.queue.size() == 0
 
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
