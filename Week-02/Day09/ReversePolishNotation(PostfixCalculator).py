@@ -42,4 +42,4 @@ class Solution:
 
 sol = Solution()
 print(sol.evalRPN(["4", "13", "5", "/", "+"]))
-print(sol.evalRPN(["0","3","/"]))
+print(sol.evalRPN(["0", "3", "/"]))
