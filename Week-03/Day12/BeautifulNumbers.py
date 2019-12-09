@@ -9,16 +9,17 @@ def beautiful_number(num, num_length):
     minimum = pos_array[0]
     maximum = pos_array[0]
     # checking beautifulness of the numbers
-    for i in range(0, num_length):
+    for i in range(0, num_length-1):
         if maximum - minimum == i:
             result += "1"
         else:
             result += "0"
-        if i != num_length - 1:
-            if pos_array[i+1] > maximum:
-                maximum = pos_array[i+1]
-            if pos_array[i+1] < minimum:
-                minimum = pos_array[i+1]
+
+        if pos_array[i+1] > maximum:
+            maximum = pos_array[i+1]
+        elif pos_array[i+1] < minimum:
+            minimum = pos_array[i+1]
+    result += "1"
 
     return result
 
