@@ -31,9 +31,9 @@ class Solution:
                 mid = (left + right) // 2
 
                 if customfunction.f(i, mid) > z:
-                    right = right - 1
+                    right = mid - 1
                 elif customfunction.f(i, mid) < z:
-                    left = left + 1
+                    left = mid + 1
                 else:
                     result.append([i, mid])
                     break
