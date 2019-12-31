@@ -8,7 +8,7 @@ class TreeNode:
 class Solution:
     def mergeTrees(self, tree1: TreeNode, tree2: TreeNode) -> TreeNode:
         if not tree1 and not tree2:
-            return None
+            return
         else:
             if tree1 and tree2:
                 tree3 = TreeNode(tree1.val + tree2.val)
