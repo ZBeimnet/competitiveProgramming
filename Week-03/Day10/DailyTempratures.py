@@ -1,6 +1,26 @@
 from typing import List
 
 
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def pop(self):
+        return self.stack.pop()
+
+    def push(self, value):
+        self.stack.append(value)
+
+    def peek(self):
+        return self.stack[-1]
+
+    def isEmpty(self):
+        return len(self.stack) == 0
+
+    def size(self):
+        return len(self.stack)
+
+
 class Solution:
     def dailyTemperatures(self, T: List[int]) -> List[int]:
         n = len(T)
@@ -16,3 +36,20 @@ class Solution:
                     temp += res[i+temp]
                 res[i] = temp
         return res
+
+    def dailyTemperaturesUsingStack(self, t):
+        length = len(t)
+        result = [0]*length
+        stack = Stack()
+
+        for i in range(length):
+            while not stack.isEmpty() and t[i] > t[stack.peek()]:
+                result[stack.peek()] = i - stack.peek()
+                stack.pop()
+            stack.push(i)
+
+        return result
+
+
+t = Solution()
+print(t.dailyTemperaturesUsingStack([73,74,75,71,69,72,76,73]))
