@@ -32,7 +32,3 @@ class Solution:
         return new_image
 
 
-
-
-
-
