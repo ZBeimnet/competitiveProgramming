@@ -30,7 +30,7 @@ class BinaryTree:
         if traversal_type == "pre_order":
             return self.pre_order_traversal(self.root, "")
         elif traversal_type == "in_order":
-            return self.in_order_traversal(self.root, "")
+            return self.in_order_traversal(self.root, [])
         elif traversal_type == "in_order_iterative":
             return self.iterative_in_order(self.root)
         elif traversal_type == "post_order":
@@ -69,9 +69,9 @@ class BinaryTree:
     def in_order_traversal(self, root, traversal):
         # left-subtree -> root -> right-subtree
         if root:
-            traversal = self.in_order_traversal(root.left, traversal)
-            traversal += str(root.value) + "-"
-            traversal = self.in_order_traversal(root.right, traversal)
+            self.in_order_traversal(root.left, traversal)
+            traversal.append(root.value)
+            self.in_order_traversal(root.right, traversal)
 
         return traversal
 
@@ -134,5 +134,5 @@ tree.root.left.right = Node(5)
 # tree.root.right.left = Node(6)
 tree.root.right.right = Node(10)
 
-print(tree.print_tree("post_order"))
-print(tree.iterative_post_order(tree.root))
+print(tree.print_tree("in_order"))
+# print(tree.iterative_post_order(tree.root))
