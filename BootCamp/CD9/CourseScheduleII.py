@@ -27,4 +27,4 @@ class Solution:
                 if in_edges[course] == 0:
                     queue.append(course)
 
-        return top_sort if numCourses == len(top_sort) else []
+        return ([], top_sort)[numCourses == len(top_sort)]
