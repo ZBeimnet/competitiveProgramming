@@ -1,6 +1,6 @@
 class Solution:
     def shiftingLetters(self, S: str, shifts: List[int]) -> str:
-        new_shift = shifts
+        new_shift = shifts[:]
 
         for i in range(len(new_shift) - 2, -1, -1):
             new_shift[i] += new_shift[i + 1]
