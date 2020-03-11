@@ -33,15 +33,29 @@ def lcs_tabular(str1, str2):
                 dp[i][j] = dp[i - 1][j - 1] + 1
             else:
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-
+    # print(dp)
+    print(print_lcs(str1, str2, len(str1), len(str2), dp))
     return dp[-1][-1]
+
+
+def print_lcs(str_1, str_2, len_1, len_2, lookup):
+    if len_1 == 0 or len_2 == 0:
+        return ""
+
+    if str_1[len_1 - 1] == str_2[len_2 - 1]:
+        return print_lcs(str_1, str_2, len_1 - 1, len_2 - 1, lookup) + str_1[len_1 - 1]
+
+    if lookup[len_1 - 1][len_2] > lookup[len_1][len_2 - 1]:
+        return print_lcs(str_1, str_2, len_1 - 1, len_2, lookup)
+    else:
+        return print_lcs(str_1, str_2, len_1, len_2 - 1, lookup)
 
 
 start = time()
 print(lcs_tabular("bsdfdsfdkjkkscd", "abcdkjfkjlllsjkhkjhkjhkjjkdfd"))
 end = time()
 print(end - start)
-start = time()
-print(lcs_memo(0, 0, "bsdfdsfdkjkkscd", "abcdkjfkjlllsjkhkjhkjhkjjkdfd", {}))
-end = time()
-print(end - start)
+# start = time()
+# print(lcs_memo(0, 0, "bsdfdsfdkjkkscd", "abcdkjfkjlllsjkhkjhkjhkjjkdfd", {}))
+# end = time()
+# print(end - start)

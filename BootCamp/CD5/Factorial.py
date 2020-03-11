@@ -21,5 +21,5 @@ def factorial_mem(x, dp):
     return dp[x]
 
 
-print(factorial_mem(4, [0] * 100))
-print(factorial_tabular(4))
+print(factorial_mem(90, [0] * 100))
+print(factorial_tabular(90))

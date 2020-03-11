@@ -19,6 +19,6 @@ def fibonacci_memo(num, memo):
 
 
 start = time()
-print(fibonacci_memo(150, [0] * 1000))
+print(fibonacci_memo(990, [0] * 1000))
 end = time()
 print(end - start)

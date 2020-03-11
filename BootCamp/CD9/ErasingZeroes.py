@@ -13,6 +13,7 @@ def erase_zeroes(s):
                 one_index = i
             else:
                 one_index = i
+        breakpoint()
 
     return no_zeroes
 

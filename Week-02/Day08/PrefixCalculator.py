@@ -2,7 +2,7 @@ from Stack import Stack
 
 
 def prefix_calculator(string_input):
-    operators = ['+', '-', '*', '/']
+    operators = {'+', '-', '*', '/'}
     input_list = string_input.split()
     list_length = len(input_list)
 
