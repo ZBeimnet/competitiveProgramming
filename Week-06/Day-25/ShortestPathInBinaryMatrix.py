@@ -22,7 +22,7 @@ class Solution:
                 y = neighbour[1] + curr_pt[1]
                 if 0 <= x < len(grid) and \
                         0 <= y < len(grid[0]) and \
-                        not grid[x][y]:
+                            not grid[x][y]:
                     queue.append([(x, y), dist + 1])
                     grid[x][y] = 1
 

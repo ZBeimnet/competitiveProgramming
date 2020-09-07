@@ -81,16 +81,14 @@ class BinaryTree:
         current = root
         result_list = []
 
-        while True:
+        while stack or current:
             if current:
                 stack.push(current)
                 current = current.left
-            elif stack.size() > 0:
+            else:
                 current = stack.pop()
                 result_list.append(current.value)
                 current = current.right
-            else:
-                break
 
         return result_list
 
@@ -108,21 +106,18 @@ class BinaryTree:
             return None
 
         stack = Stack()
-        result_stack = Stack()
+        result = []
         stack.push(root)
 
         while stack.size() > 0:
             current_node = stack.pop()
-            result_stack.push(current_node)
+            result.append(current_node.value)
             if current_node.left:
                 stack.push(current_node.left)
             if current_node.right:
                 stack.push(current_node.right)
 
-        result = []
-        while result_stack.size() > 0:
-            result.append(result_stack.pop().value)
-
+        result.reverse()
         return result
 
 

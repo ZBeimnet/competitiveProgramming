@@ -16,7 +16,7 @@ class Solution:
                 buy[0] = True
                 buy[1] = i
             elif prices[i] > prices[i + 1] and buy[0]:
-                buy[0] = False
+                buy[0] = Fals
                 max_profit += prices[i] - prices[buy[1]]
 
         if buy[0]:

@@ -43,6 +43,8 @@ class Solution:
                     and not grid[curr_row][curr_col]:
                 self.dfs(curr_row, curr_col, visited, grid)
 
+        return
+
 
 
 

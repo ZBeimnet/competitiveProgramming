@@ -20,7 +20,7 @@ class Solution:
     def bfs(self, point, grid):
         neighbours = [(1, 0), (-1, 0), (0, 1), (0, -1)]
         queue = deque([point])
-        visited = set([point])
+        visited = {point}
 
         while queue:
             x, y = queue.popleft()
@@ -33,7 +33,7 @@ class Solution:
                 curr_y = y + neighbour[1]
                 if 0 <= curr_y < len(grid) and \
                         0 <= curr_x < len(grid) and \
-                        (curr_x, curr_y) not in visited:
+                            (curr_x, curr_y) not in visited:
                     queue.append((curr_x, curr_y))
                     visited.add((curr_x, curr_y))
 
