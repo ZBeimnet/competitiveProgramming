@@ -56,5 +56,3 @@ def has_cycle(head):
         fast = fast.next.next
         slow = slow.next
     return False
-
-if __name__ == '__main__':
