@@ -1,7 +1,7 @@
 """
 # run bfs on the tree, state -> [node, depth], root_depth = 1
     # at each step we check if the current node is a leaf node
-        # if true -> return depth (since we're running dfs, the first depth we going to reach is the minimum depth)
+        # if true -> return depth (since we're running bfs, the first depth we going to reach is the minimum depth)
 """
 # Definition for a binary tree node.
 # class TreeNode:
