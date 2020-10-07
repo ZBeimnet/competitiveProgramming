@@ -1,3 +1,4 @@
+# Leetcode's solution
 class ExamRoom:
 
     def __init__(self, N: int):

@@ -1,3 +1,4 @@
+# Leetcode's solution
 class MyCalendarTwo:
     def __init__(self):
         self.calendar = []
