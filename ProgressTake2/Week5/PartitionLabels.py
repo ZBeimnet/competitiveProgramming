@@ -42,7 +42,7 @@ class Solution:
 		
 		# way cleaner and to the point than my solution (Leetcode's solution)
         partitions = []
-		start, end = 0, 0
+	start, end = 0, 0
 
         for i, char in enumerate(S):
             end = max(end, end_pos[ord(char) - ord('a')])
