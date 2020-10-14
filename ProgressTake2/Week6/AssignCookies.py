@@ -10,7 +10,7 @@ g = [1,2,3], s = [1,1] , s[j] >= g[i]
     else:
         j += 1
 
-time-complexity -> O(X), where x is the minimum of g and s
+time-complexity -> O(xlogx), where x is the maximum of g and s
 space-complexity -> O(1)
 
 """
