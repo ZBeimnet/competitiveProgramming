@@ -39,8 +39,7 @@ class Solution:
                 curr_char = heapq.heappop(char_count)
                 reorganized_arr.append(curr_char[1])
                 curr_char[0] += 1
-                if curr_char[0] < 0:
-                    heapq.heappush(char_count, curr_char)
+                heapq.heappush(char_count, curr_char)
             else:
                 if char_count[1][0] == 0 and char_count[2][0] == 0:
                     return ""
@@ -49,8 +48,7 @@ class Solution:
                     char2 = heapq.heappop(char_count)
                     reorganized_arr.append(char2[1])
                     char2[0] += 1
-                    if char2[0] < 0:
-                        heapq.heappush(char_count, char2)
+                    heapq.heappush(char_count, char2)
                     heapq.heappush(char_count, char1)
         
         return "".join(reorganized_arr[1:])
