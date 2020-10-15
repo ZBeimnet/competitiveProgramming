@@ -9,18 +9,18 @@
 "abaca" -> ""
 
 step1: count every character with a format -> [[count, char], ...]
-step2: heapify our count
+step2: heapify our count (max heap)
 step3: while len(count) > 0
         # if top of heap is d/t from our prev char
-            # pop -> add to reorganized_str -> count-- -> push if count > 0
+            # pop -> add to reorganized_str -> count-- -> push 
         # else
-            # if len(count) > 2:
+            # if count of 2nd max > 0:
                 # pop 2 elements -> add the 2nd to reorganized_str -> count of 2nd --
-                  -> push both if count of each > 0
+                  -> push both 
             # else:
                 # return ""
 
-time-complexity -> O(N)*O(log26) = O(N), where N is len(S)
+time-complexity -> O(N*log26) = O(N), where N is len(S)
 space-complexity -> O(N)
 """
 import heapq 
