@@ -1,7 +1,6 @@
 class Solution:
     def minSideJumps(self, obstacles: List[int]) -> int:
-        cache = {}
-        return self.dfs(obstacles, 2, 0, cache) # states -> lane, point
+        return self.dfs(obstacles, 2, 0, {}) # states -> lane, point
     
     def dfs(self, obstacles, lane, point, cache):
         if (lane, point) in cache:
