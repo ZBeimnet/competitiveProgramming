@@ -1,7 +1,6 @@
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
-        cache = {}
-        return self.dfs(nums, target, cache)
+        return self.dfs(nums, target, {})
     
     def dfs(self, nums, target, cache):
         if target in cache:
