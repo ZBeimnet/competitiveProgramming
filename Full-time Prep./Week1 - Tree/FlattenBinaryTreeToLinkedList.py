@@ -18,14 +18,11 @@ class Solution:
         last_right = self.dfs(node.right)
         
         if last_left and last_right:
-            temp = node.right
-            node.right = node.left
-            last_left.right = temp
+            node.right, last_left.right = node.left, node.right
         elif last_left:
             node.right = node.left
-            last_right = last_left
         
         node.left = None
-        return last_right
+        return (last_left, last_right)[last_right != None]
     
         
