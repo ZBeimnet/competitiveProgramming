@@ -20,16 +20,16 @@ class Solution:
             return (0, node.val)[not parent_robbed]
         
         max_amount = 0
+        # option 1
+        left1 = self.dfs(node.left, False, cache)
+        right1 = self.dfs(node.right, False, cache)
+        left2 = right2 = 0
         if not parent_robbed:
-            left1 = self.dfs(node.left, False, cache)
-            right1 = self.dfs(node.right, False, cache)
+            # option 2
             left2 = self.dfs(node.left, True, cache)
             right2 = self.dfs(node.right, True, cache)
-            max_amount = max(left1 + right1, left2 + right2 + node.val)
-        else:
-            left = self.dfs(node.left, False, cache)
-            right = self.dfs(node.right, False, cache)
-            max_amount = left + right
+            max_amount = left2 + right2 + node.val
+        max_amount = max(max_amount, left1 + right1)
         
         cache[state] = max_amount
         return max_amount
