@@ -44,6 +44,15 @@ class NestedIterator:
             else:
                 yield from self.find_next_int(el.getList())
     
+    def find_next_int_iterative(self):
+        stack = [el for el in self.nested_list][::-1]
+        while stack:
+            curr_el = stack.pop()
+            if curr_el.isInteger():
+                yield curr_el.getInteger()
+            else:
+                stack.extend([el for el in curr_el.getList()][::-1])
+    
          
 
 # Your NestedIterator object will be instantiated and called as such:
