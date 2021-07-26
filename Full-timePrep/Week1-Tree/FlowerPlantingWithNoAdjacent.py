@@ -1,4 +1,5 @@
 from collections import defaultdict, deque
+from typing import List
 class Solution:
     def gardenNoAdj(self, n: int, paths: List[List[int]]) -> List[int]:
         answer = [0] * n
@@ -15,7 +16,6 @@ class Solution:
         for i, f_type in enumerate(answer):
             if f_type == 0:
                 answer[i] = 1
-        
         return answer
     
     def bfs(self, garden, graph, answer):
