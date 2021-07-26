@@ -1,4 +1,5 @@
 from collections import defaultdict
+from typing import List
 class Solution:
     def makeConnected(self, n: int, connections: List[List[int]]) -> int:
         graph = defaultdict(list)
@@ -16,7 +17,8 @@ class Solution:
                 required_edges += connected_nodes - 1
                 groups += 1
         
-        return (-1, groups - 1)[len(connections) - required_edges >= groups - 1]
+        extra_edges = len(connections) - required_edges
+        return (-1, groups - 1)[extra_edges >= groups - 1]
     
     def dfs(self, node, graph, visited):
         visited.add(node)
