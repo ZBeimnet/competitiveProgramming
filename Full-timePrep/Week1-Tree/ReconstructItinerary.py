@@ -1,4 +1,4 @@
-# I could only come up which a brute-force soln with resulted in TLE.
+# I could only come up with a brute-force soln which resulted in TLE.
 # https://leetcode.com/problems/reconstruct-itinerary/discuss/78768/Short-Ruby-Python-Java-C%2B%2B
 # https://leetcode.com/problems/reconstruct-itinerary/discuss/375397/Simply-simple-Python-Solution-Using-stack-for-dfs-with-comments
 from collections import defaultdict
