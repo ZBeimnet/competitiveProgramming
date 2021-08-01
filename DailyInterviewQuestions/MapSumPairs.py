@@ -1,35 +1,44 @@
 class TrieNode:
     def __init__(self):
         self.children = {}
-        self.value = 0
-        
-        
+        self.val = 0
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def insert(self, word, val):
+        current = self.root
+        for char in word:
+            if char not in current.children:
+                current.children[char] = TrieNode()
+            current = current.children[char]
+            current.val += val
+    
+    def sum_prefix_val(self, prefix):
+        current = self.root
+        for char in prefix:
+            if char not in current.children:
+                return 0
+            current = current.children[char]
+        return current.val
+
 class MapSum:
 
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.words = {}
-        self.root = TrieNode()
+        self.trie = Trie()
+        self.map = defaultdict(int)
 
     def insert(self, key: str, val: int) -> None:
-        diff = val - self.words.get(key, 0)
-        self.words[key] = val
-        node = self.root
-        for char in key:
-            if char not in node.children:
-                node.children[char] = TrieNode()
-            node.children[char].value += diff
-            node = node.children[char]
+        val_diff = val - self.map[key]
+        self.map[key] = val
+        self.trie.insert(key, val_diff)
 
     def sum(self, prefix: str) -> int:
-        node = self.root
-        for char in prefix:
-            if char not in node.children:
-                return 0
-            node = node.children[char]
-        return node.value
+        return self.trie.sum_prefix_val(prefix)
 
 
 # Your MapSum object will be instantiated and called as such:
