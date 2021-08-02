@@ -11,7 +11,7 @@ class Solution:
         if start == len(s):
             return True
         
-        if s[start:] in word_dict:
+        if s[start:] in word_dict: # important prunning :)
             cache[start] = True
             return True
         for i in range(start + 1, len(s)):
