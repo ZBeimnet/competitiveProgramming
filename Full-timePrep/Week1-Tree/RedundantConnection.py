@@ -14,9 +14,11 @@ class Solution:
         for u, v in edges:
             node_u = value_node_map[u]
             node_v = value_node_map[v]
-            if self.find_set(node_u) == self.find_set(node_v):
+            node_u_root = self.find_set(node_u)
+            node_v_root = self.find_set(node_v)
+            if node_u_root == node_v_root:
                 return [u, v]
-            self.union(node_u, node_v)
+            self.union(node_u_root, node_v_root)
     
     def make_set(self, val, value_node_map):
         node = Node(val)
@@ -30,9 +32,7 @@ class Solution:
         node.parent = root
         return root
     
-    def union(self, node1, node2):
-        set1_root = self.find_set(node1)
-        set2_root = self.find_set(node2)
+    def union(self, set1_root, set2_root):
         # union by rank
         if set1_root.rank > set2_root.rank:
             set2_root.parent = set1_root
