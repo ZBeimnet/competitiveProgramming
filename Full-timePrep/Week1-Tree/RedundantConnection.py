@@ -27,7 +27,7 @@ class Solution:
             return node
         root = self.find_set(node.parent)
         # path-compression
-        node.paret = root
+        node.parent = root
         return root
     
     def union(self, node1, node2):
