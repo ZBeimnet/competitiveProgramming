@@ -25,12 +25,10 @@ class Solution:
         value_node_map[val] = node
     
     def find_set(self, node):
-        if node.parent == node:
-            return node
-        root = self.find_set(node.parent)
-        # path-compression
-        node.parent = root
-        return root
+        if node.parent != node:
+            # path-compression
+            node.parent = self.find_set(node.parent)
+        return node.parent
     
     def union(self, set1_root, set2_root):
         # union by rank
