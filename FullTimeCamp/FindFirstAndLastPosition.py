@@ -1,4 +1,5 @@
 # Problem link - https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+# https://docs.python.org/3/library/operator.html
 
 import operator
 
